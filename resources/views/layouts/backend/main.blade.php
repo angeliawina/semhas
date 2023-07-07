@@ -88,11 +88,32 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <form class="btn btn-warning" method="POST" action="{{ route('logout') }}">
+                        @csrf
+
+                        <x-dropdown-link :href="route('logout')"
+                            onclick="event.preventDefault();
+                                this.closest('form').submit();">
+                            Logout
+                        </x-dropdown-link>
+                    </form>
+                    </button>
+
+
                 </div>
             </div>
         </div>
     </div>
+
+    <form method="POST" action="{{ route('logout') }}">
+        @csrf
+
+        <x-dropdown-link :href="route('logout')"
+            onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+            {{ __('Log Out') }}
+        </x-dropdown-link>
+    </form>
 
     <!-- Bootstrap core JavaScript-->
     <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>

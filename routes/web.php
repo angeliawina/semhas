@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BanksampahController;
 use App\Http\Controllers\SigbsController;
@@ -20,9 +21,15 @@ use App\Http\Controllers\SampahController;
 
 // Route::get('/', function () {
 //     return view('welcome');
+// });
 
-
-    //DATA BANK SAMPAH
+Route::get('/dashboard', [BanksampahController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('admin.dashboard');
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    
+   //DATA BANK SAMPAH
     Route::get('/', [BanksampahController::class, 'dashboard'])->name('admin.dashboard');
     Route::get('/kelolabs/index', [BanksampahController::class, 'indexBs'])->name('admin.banksampah');
     Route::get('/kelolabs/formtambah', [BanksampahController::class, 'formTambahBS'])->name('admin.banksampah.formtambah');
@@ -34,6 +41,12 @@ use App\Http\Controllers\SampahController;
     Route::get('/kelolabs/titik', [BanksampahController::class, 'titik'])->name('admin.banksampah.titik');
     Route::get('/kelolabs/popup/{id}', [BanksampahController::class, 'popup'])->name('admin.banksampah.popup');
 
+
+});
+
+require __DIR__.'/auth.php';
+
+ 
 
 
     //DATA SAMPAH
@@ -70,4 +83,3 @@ use App\Http\Controllers\SampahController;
     
 
 
-// });
