@@ -1,0 +1,41 @@
+#jumbotron {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+    /* background-color: #2e2e30; */
+}
+
+.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
+#mainNav {
+    background-color: #4e4e61;
+}
+
+.navbar-brand {
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+#banksampah {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+}
+
+#about {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+}
+
+section {
+    padding-top: 5rem;
+    padding-bottom: 7rem;
+}
