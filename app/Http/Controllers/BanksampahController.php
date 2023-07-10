@@ -14,9 +14,9 @@ class BanksampahController extends Controller
     public function dashboard()
     {
         $bank = Banksampah::all();
-        $kecamatan = Kecamatan::all();
+
         // $akhir = Banksampah::all()->last();
-        return view('pemetaan.map', compact('bank', 'kecamatan'));
+        return view('pemetaan.map', compact('bank',));
     }
 
     public function indexBs()
@@ -27,8 +27,8 @@ class BanksampahController extends Controller
 
     public function formTambahBS()
     {
-        $kecamatan = Kecamatan::all();
-        return view('kelolabs.form_tambah_bs', compact('kecamatan'));
+
+        return view('kelolabs.form_tambah_bs',);
     }
 
     /**
@@ -51,7 +51,7 @@ class BanksampahController extends Controller
                 'foto' => $imageName,
                 'latitude' => $request->latitude,
                 'longitude' => $request->longitude,
-                'kecamatans_id' => $request->id,
+
             ]);
 
             //folder foto

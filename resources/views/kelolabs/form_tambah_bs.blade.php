@@ -52,14 +52,7 @@
                                 <input class="form-control" name="alamat" id="" cols="30" rows="10">
                             </div>
 
-                            <div class="form-group">
-                                <label>Kecamatan</label>
-                                <select for="id" name="id" class="form-control", value=>
-                                    @foreach ($kecamatan as $kec)
-                                        <option value="{{ $kec->id }}">{{ $kec->nama }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
+                         
 
                             <div class="form-group">
                                 <label for="foto">Foto Bank Sampah</label>

@@ -28,11 +28,7 @@
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('admin.datakecamatan') }}">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Kelola Data Kecamatan</span></a>
-            </li>
+           
 
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('admin.banksampah') }}">

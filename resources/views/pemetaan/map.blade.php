@@ -1047,16 +1047,7 @@
             }
 
 
-            // @foreach ($kecamatan as $kcm)
-
-            //     L.geoJSON({{ asset('storage/app/public/0MqJsfAtkoVjlVm9IcQGevex3rj2BiHG.geojson') }}, {
-            //         style: function (feature) {
-            //             return {color: feature.properties.color};
-            //         }
-            //         }).bindPopup(function (layer) {
-            //             return layer.feature.properties.description;
-            //         }).addTo(leafletMap);
-            // @endforeach
+       
 
             // $(document).ready(function() {
             //     $.getJSON('kelolabs/titik', function(data) {
