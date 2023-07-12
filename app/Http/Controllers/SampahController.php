@@ -116,13 +116,13 @@ $imageName = Str::random(32).".".$request->foto->getClientOriginalExtension();
 }}
 
 
-
     public function detailSampah($banksampah_id, $id)
     {
         $bank = Banksampah::where('id', $banksampah_id)->first();
         $sampah = $bank->sampahs()->where('id', $id)->first();
         return view('kelolasampah.detail_sampah',compact('bank','sampah'));
-    }    
+    }  
+
     public function hapusSampah($id,)
     {
         // $bank = Banksampah::where('id', $banksampah_id)->first();
@@ -138,6 +138,13 @@ $imageName = Str::random(32).".".$request->foto->getClientOriginalExtension();
         $sampah->delete($sampah->foto);
         $sampah->delete();
         return redirect()->route('admin.datasampah')->with('message', 'Berhasil Menghapus!');;
+    }
+
+    public function jumlahSampah()
+    {
+        $bank = Banksampah::all();
+        $sampah = Sampah::all();
+        return view('kelolasampah.jumlah_sampah', compact('bank','sampah'));
     }
             
 }

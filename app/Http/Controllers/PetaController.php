@@ -12,9 +12,4 @@ class PetaController extends Controller
         $bank = Banksampah::all();
         return view('pemetaan.map', compact('bank'));
     }
-
-    public function grid()
-    {
-        return view('pemetaan.gridcontent');
-    }
 }

@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Banksampah;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\BankSampahRequest;
-use App\Models\Kecamatan;
+
 
 class BanksampahController extends Controller
 {
@@ -155,5 +155,11 @@ class BanksampahController extends Controller
         $bank->delete($bank->foto);
         $bank->delete();
         return redirect()->route('admin.banksampah')->with('message', 'Berhasil Menghapus!');;
+    }
+
+    public function detailUnit()
+    {
+        $bank = Banksampah::all();
+        return view('kelolabs.detail_unit', compact('bank'));
     }
 }
