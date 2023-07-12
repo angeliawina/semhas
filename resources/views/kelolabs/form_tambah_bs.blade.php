@@ -52,6 +52,11 @@
                                 <input class="form-control" name="alamat" id="" cols="30" rows="10">
                             </div>
 
+                            <div class="form-group">
+                                <label for="rute">Rute Bank Sampah</label>
+                                <input class="form-control" name="rute" id="" cols="30" rows="10">
+                            </div>
+
                          
 
                             <div class="form-group">

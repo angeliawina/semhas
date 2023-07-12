@@ -48,6 +48,7 @@ class BanksampahController extends Controller
             Banksampah::create([
                 'nama' => $request->nama,
                 'alamat' => $request->alamat,
+                'rute' => $request->rute,
                 'foto' => $imageName,
                 'latitude' => $request->latitude,
                 'longitude' => $request->longitude,
@@ -92,6 +93,7 @@ class BanksampahController extends Controller
 
             $bank->nama = $request->nama;
             $bank->alamat = $request->alamat;
+            $bank->rute = $request->rute;
             $bank->latitude = $request->latitude;
             $bank->longitude = $request->longitude;
 

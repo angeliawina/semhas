@@ -49,6 +49,12 @@
 
                 </div>
 
+                <div class="from-group">
+                    <label for="rute">Rute Bank Sampah</label>
+                    <input class="form-control" type="text" name="rute" value="{{ $bank->rute }}">
+
+                </div>
+
                 <div class="form-group">
                     <label for="foto">Foto Bank Sampah</label>
                     <input type="file" name="foto" class="form-control">

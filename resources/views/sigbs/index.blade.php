@@ -45,7 +45,7 @@
 
         <style>
             #peta {
-                height: 550px;
+                height: 1000px;
                 width: 100%;
             }
         </style>
@@ -69,16 +69,16 @@
                             SIG Lokasi Banksampah
                             Kota Pontianak
                         </h1>
-                        <div class="btn btn-secondary">See More ></div>
+                        {{-- <div class="btn btn-secondary">See More ></div> --}}
 
 
 
                     </div>
-                    <div class="row">
+                    {{-- <div class="row">
                         <div class="col text-end">
                             <h6>www.sigbs.com</h6>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </section>
@@ -151,9 +151,12 @@
 
                     L.marker([{{ $bnk->latitude }}, {{ $bnk->longitude }}]).addTo(
                         leafletMap).bindPopup(
-                        '<h5>{{ $bnk->nama }}</h5><br> <img src={{ asset('storage/' . $bnk->foto) }} width="150px" <br> Alamat : {{ $bnk->alamat }}', {
-                            maxWidth: '150'
+                        '<h1>{{ $bnk->nama }}</h1><br><h5>{{ $bnk->alamat }}</h5><br>  <img src={{ asset('storage/' . $bnk->foto) }} width="650px"; height= "400px" <br>', {
+                            maxWidth: '650', 
+                            
+                            
                         }
+                      
                     );
                 @endforeach
 
@@ -1021,15 +1024,24 @@
                 <div class="row align-items-center">
                     @foreach ($bank as $banks)
                         <div class="col-md-3 mb-3">
-                            <div class="card">
-                                <a href="{{ route('sigbs.dataBS', ['id' => $banks->id]) }}">
-                                    <img class="card-img-top" style="-o-object-fit: cover; width:15rem; height:15rem"
+                            <section id="card">
+                      <div class="card">
+                                    {{-- <img src="{{ asset('storage/' . $banks->foto) }}" alt="Avatar" style="width:100%; height:300px">
+                                    <div class="container">
+                                      <h4><b>{{$banks->nama}}</b></h4>
+                                      <p>{{$banks->alamat}}</p>
+                                    </div>
+                                  </div> --}}
+                                  <a href="{{ route('sigbs.dataBS', ['id' => $banks->id]) }}">
+                                    <img class="card-img-top" style="width:100%; height:350px"
                                         src="{{ asset('storage/' . $banks->foto) }}" alt="banksampah"></a>
 
                                 <div class="card-body">
-                                    <h6 class="card-title">{{ $banks->nama }} </h6>
+                                    <h4 class="card-title">{{ $banks->nama }} </h4>
+                                    <p>{{$banks->alamat}}</p>
                                 </div>
-                            </div>
+                            </section>
+                            
                         </div>
                     @endforeach
 

@@ -16,6 +16,7 @@ class Banksampah extends Model
         'nama',
         'alamat',
         'foto',
+        'rute',
         'latitude',
         'longitude'
     ];
