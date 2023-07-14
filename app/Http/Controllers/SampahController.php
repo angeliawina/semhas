@@ -144,7 +144,9 @@ $imageName = Str::random(32).".".$request->foto->getClientOriginalExtension();
     {
         $bank = Banksampah::all();
         $sampah = Sampah::all();
-        return view('kelolasampah.jumlah_sampah', compact('bank','sampah'));
+        $count = sampah::count();
+        $banks = Banksampah::where('id', $bank)->get();
+        return view('kelolasampah.jumlah_sampah', compact('bank','sampah','count','banks'));
     }
             
 }
